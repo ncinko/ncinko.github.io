@@ -7,11 +7,12 @@ var slider = document.getElementById("myRange");
 
 
 class Planet {
-  constructor(x, y, vx, vy, m) {
+  constructor(x, y, vx, vy, m, col) {
     this.pos = createVector(x, y);
     this.vel = createVector(vx, vy);
     this.acc = createVector(0, 0);
     this.mass = m;
+    this.col = col;
     this.r = sqrt(this.mass) * 2;
   }
 
@@ -36,9 +37,10 @@ class Planet {
   }
 
   show() {
-    stroke(255);
+    //stroke(255);
     strokeWeight(2);
-    fill(255, 100);
+    fill('rgba(100%,0%,100%,0.5)');
+    fill(color(this.col, 0, 100));
     ellipse(this.pos.x, this.pos.y, this.r * 2);
   }
 }
